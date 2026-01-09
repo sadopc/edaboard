@@ -27,7 +27,8 @@
 
 ## Screenshots
 
-*Coming soon*
+<img width="336" height="410" alt="image" src="https://github.com/user-attachments/assets/aeafc8ff-c9f0-4c3d-9820-8d555625702f" />
+
 
 ## Installation
 
