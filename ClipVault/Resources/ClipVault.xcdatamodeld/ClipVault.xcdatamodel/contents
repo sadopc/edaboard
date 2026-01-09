@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="NO" userDefinedModelVersionIdentifier="">
+    <entity name="ClipboardItem" representedClassName="ClipboardItem" syncable="YES" codeGenerationType="class">
+        <attribute name="contentHash" attributeType="String"/>
+        <attribute name="contentType" attributeType="String"/>
+        <attribute name="dataSize" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String"/>
+        <attribute name="fileURLString" optional="YES" attributeType="String"/>
+        <attribute name="fullImagePath" optional="YES" attributeType="String"/>
+        <attribute name="htmlContent" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isPinned" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="plainTextContent" optional="YES" attributeType="String"/>
+        <attribute name="rtfData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="sourceAppBundleId" optional="YES" attributeType="String"/>
+        <attribute name="sourceAppName" optional="YES" attributeType="String"/>
+        <attribute name="textContent" optional="YES" attributeType="String"/>
+        <attribute name="thumbnailPath" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="urlString" optional="YES" attributeType="String"/>
+        <fetchIndex name="byContentHashIndex">
+            <fetchIndexElement property="contentHash" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byIsPinnedIndex">
+            <fetchIndexElement property="isPinned" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byTimestampIndex">
+            <fetchIndexElement property="timestamp" type="Binary" order="descending"/>
+        </fetchIndex>
+        <fetchIndex name="byContentTypeIndex">
+            <fetchIndexElement property="contentType" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+</model>

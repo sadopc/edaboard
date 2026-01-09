@@ -1,0 +1,798 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E8A1B1002D2F8A0000000001 /* ClipVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B1012D2F8A0000000001 /* ClipVaultApp.swift */; };
+		E8A1B1022D2F8A0000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8A1B1032D2F8A0000000002 /* Assets.xcassets */; };
+		E8A1B1042D2F8A0000000003 /* ClipVault.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B1052D2F8A0000000003 /* ClipVault.xcdatamodeld */; };
+		E8A1B4002D2F8A0000000400 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B4012D2F8A0000000401 /* ContentType.swift */; };
+		E8A1B4022D2F8A0000000402 /* ClipboardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B4032D2F8A0000000403 /* ClipboardItem.swift */; };
+		E8A1B4042D2F8A0000000404 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B4052D2F8A0000000405 /* Constants.swift */; };
+		E8A1B4062D2F8A0000000406 /* NSPasteboard+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B4072D2F8A0000000407 /* NSPasteboard+Helpers.swift */; };
+		E8A1B4082D2F8A0000000408 /* Data+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B4092D2F8A0000000409 /* Data+Image.swift */; };
+		E8A1B40A2D2F8A000000040A /* String+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B40B2D2F8A000000040B /* String+Search.swift */; };
+		E8A1B40C2D2F8A000000040C /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B40D2D2F8A000000040D /* SettingsManager.swift */; };
+		E8A1B40E2D2F8A000000040E /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B40F2D2F8A000000040F /* PermissionManager.swift */; };
+		E8A1B4102D2F8A0000000410 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B4112D2F8A0000000411 /* ImageProcessor.swift */; };
+		E8A1B4122D2F8A0000000412 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B4132D2F8A0000000413 /* HistoryStore.swift */; };
+		E8A1B4142D2F8A0000000414 /* ClipboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B4152D2F8A0000000415 /* ClipboardMonitor.swift */; };
+		E8A1B5002D2F8A0000000500 /* ClipboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B5012D2F8A0000000501 /* ClipboardViewModel.swift */; };
+		E8A1B5022D2F8A0000000502 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B5032D2F8A0000000503 /* HotkeyManager.swift */; };
+		E8A1B5042D2F8A0000000504 /* PasteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B5052D2F8A0000000505 /* PasteService.swift */; };
+		E8A1B5062D2F8A0000000506 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B5072D2F8A0000000507 /* EmptyStateView.swift */; };
+		E8A1B5082D2F8A0000000508 /* ClipboardItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B5092D2F8A0000000509 /* ClipboardItemRow.swift */; };
+		E8A1B50A2D2F8A000000050A /* ClipboardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B50B2D2F8A000000050B /* ClipboardListView.swift */; };
+		E8A1B50C2D2F8A000000050C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B50D2D2F8A000000050D /* SearchBar.swift */; };
+		E8A1B50E2D2F8A000000050E /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B50F2D2F8A000000050F /* MenuBarView.swift */; };
+		E8A1B5102D2F8A0000000510 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B5112D2F8A0000000511 /* ImagePreviewView.swift */; };
+		E8A1B5122D2F8A0000000512 /* PinnedSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B5132D2F8A0000000513 /* PinnedSectionView.swift */; };
+		E8A1B5142D2F8A0000000514 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B5152D2F8A0000000515 /* OnboardingView.swift */; };
+		E8A1B5162D2F8A0000000516 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B5172D2F8A0000000517 /* SettingsView.swift */; };
+		E8A1B5182D2F8A0000000518 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B5192D2F8A0000000519 /* SettingsViewModel.swift */; };
+		E8A1B60B2D2F8A0000000602 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B60A2D2F8A0000000601 /* SoundService.swift */; };
+		E8A1B60D2D2F8A0000000604 /* FaviconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A1B60C2D2F8A0000000603 /* FaviconView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8A1B1102D2F8A0000000010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8A1B0F02D2F8A0000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8A1B0F72D2F8A0000000001;
+			remoteInfo = ClipVault;
+		};
+		E8A1B1202D2F8A0000000020 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8A1B0F02D2F8A0000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8A1B0F72D2F8A0000000001;
+			remoteInfo = ClipVault;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E8A1B0F82D2F8A0000000001 /* ClipVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A1B1012D2F8A0000000001 /* ClipVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipVaultApp.swift; sourceTree = "<group>"; };
+		E8A1B1032D2F8A0000000002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8A1B1052D2F8A0000000004 /* ClipVault.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClipVault.xcdatamodel; sourceTree = "<group>"; };
+		E8A1B1062D2F8A0000000004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8A1B1072D2F8A0000000005 /* ClipVault.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClipVault.entitlements; sourceTree = "<group>"; };
+		E8A1B10E2D2F8A0000000010 /* ClipVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClipVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A1B11E2D2F8A0000000020 /* ClipVaultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClipVaultUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A1B4012D2F8A0000000401 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		E8A1B4032D2F8A0000000403 /* ClipboardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardItem.swift; sourceTree = "<group>"; };
+		E8A1B4052D2F8A0000000405 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E8A1B4072D2F8A0000000407 /* NSPasteboard+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPasteboard+Helpers.swift"; sourceTree = "<group>"; };
+		E8A1B4092D2F8A0000000409 /* Data+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Image.swift"; sourceTree = "<group>"; };
+		E8A1B40B2D2F8A000000040B /* String+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Search.swift"; sourceTree = "<group>"; };
+		E8A1B40D2D2F8A000000040D /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		E8A1B40F2D2F8A000000040F /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		E8A1B4112D2F8A0000000411 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
+		E8A1B4132D2F8A0000000413 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
+		E8A1B4152D2F8A0000000415 /* ClipboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMonitor.swift; sourceTree = "<group>"; };
+		E8A1B5012D2F8A0000000501 /* ClipboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardViewModel.swift; sourceTree = "<group>"; };
+		E8A1B5032D2F8A0000000503 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
+		E8A1B5052D2F8A0000000505 /* PasteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteService.swift; sourceTree = "<group>"; };
+		E8A1B5072D2F8A0000000507 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		E8A1B5092D2F8A0000000509 /* ClipboardItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardItemRow.swift; sourceTree = "<group>"; };
+		E8A1B50B2D2F8A000000050B /* ClipboardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardListView.swift; sourceTree = "<group>"; };
+		E8A1B50D2D2F8A000000050D /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		E8A1B50F2D2F8A000000050F /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		E8A1B5112D2F8A0000000511 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
+		E8A1B5132D2F8A0000000513 /* PinnedSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedSectionView.swift; sourceTree = "<group>"; };
+		E8A1B5152D2F8A0000000515 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		E8A1B5172D2F8A0000000517 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E8A1B5192D2F8A0000000519 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		E8A1B60A2D2F8A0000000601 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
+		E8A1B60C2D2F8A0000000603 /* FaviconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaviconView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8A1B0F52D2F8A0000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A1B10B2D2F8A0000000010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A1B11B2D2F8A0000000020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8A1B0EF2D2F8A0000000000 = {
+			isa = PBXGroup;
+			children = (
+				E8A1B0FA2D2F8A0000000001 /* ClipVault */,
+				E8A1B1112D2F8A0000000010 /* ClipVaultTests */,
+				E8A1B1212D2F8A0000000020 /* ClipVaultUITests */,
+				E8A1B0F92D2F8A0000000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8A1B0F92D2F8A0000000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8A1B0F82D2F8A0000000001 /* ClipVault.app */,
+				E8A1B10E2D2F8A0000000010 /* ClipVaultTests.xctest */,
+				E8A1B11E2D2F8A0000000020 /* ClipVaultUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8A1B0FA2D2F8A0000000001 /* ClipVault */ = {
+			isa = PBXGroup;
+			children = (
+				E8A1B1012D2F8A0000000001 /* ClipVaultApp.swift */,
+				E8A1B1062D2F8A0000000004 /* Info.plist */,
+				E8A1B1072D2F8A0000000005 /* ClipVault.entitlements */,
+				E8A1B2002D2F8A0000000100 /* Views */,
+				E8A1B2102D2F8A0000000110 /* ViewModels */,
+				E8A1B2202D2F8A0000000120 /* Services */,
+				E8A1B2302D2F8A0000000130 /* Models */,
+				E8A1B2402D2F8A0000000140 /* Utilities */,
+				E8A1B2502D2F8A0000000150 /* Resources */,
+			);
+			path = ClipVault;
+			sourceTree = "<group>";
+		};
+		E8A1B1112D2F8A0000000010 /* ClipVaultTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8A1B3002D2F8A0000000200 /* Services */,
+				E8A1B3102D2F8A0000000210 /* ViewModels */,
+				E8A1B3202D2F8A0000000220 /* Utilities */,
+			);
+			path = ClipVaultTests;
+			sourceTree = "<group>";
+		};
+		E8A1B1212D2F8A0000000020 /* ClipVaultUITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ClipVaultUITests;
+			sourceTree = "<group>";
+		};
+		E8A1B2002D2F8A0000000100 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E8A1B5072D2F8A0000000507 /* EmptyStateView.swift */,
+				E8A1B5092D2F8A0000000509 /* ClipboardItemRow.swift */,
+				E8A1B50B2D2F8A000000050B /* ClipboardListView.swift */,
+				E8A1B50D2D2F8A000000050D /* SearchBar.swift */,
+				E8A1B50F2D2F8A000000050F /* MenuBarView.swift */,
+				E8A1B5112D2F8A0000000511 /* ImagePreviewView.swift */,
+				E8A1B5132D2F8A0000000513 /* PinnedSectionView.swift */,
+				E8A1B5152D2F8A0000000515 /* OnboardingView.swift */,
+				E8A1B5172D2F8A0000000517 /* SettingsView.swift */,
+				E8A1B60C2D2F8A0000000603 /* FaviconView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E8A1B2102D2F8A0000000110 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E8A1B5012D2F8A0000000501 /* ClipboardViewModel.swift */,
+				E8A1B5192D2F8A0000000519 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E8A1B2202D2F8A0000000120 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E8A1B40D2D2F8A000000040D /* SettingsManager.swift */,
+				E8A1B40F2D2F8A000000040F /* PermissionManager.swift */,
+				E8A1B4112D2F8A0000000411 /* ImageProcessor.swift */,
+				E8A1B4132D2F8A0000000413 /* HistoryStore.swift */,
+				E8A1B4152D2F8A0000000415 /* ClipboardMonitor.swift */,
+				E8A1B5032D2F8A0000000503 /* HotkeyManager.swift */,
+				E8A1B5052D2F8A0000000505 /* PasteService.swift */,
+				E8A1B60A2D2F8A0000000601 /* SoundService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E8A1B2302D2F8A0000000130 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8A1B4012D2F8A0000000401 /* ContentType.swift */,
+				E8A1B4032D2F8A0000000403 /* ClipboardItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E8A1B2402D2F8A0000000140 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E8A1B4052D2F8A0000000405 /* Constants.swift */,
+				E8A1B2412D2F8A0000000141 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E8A1B2412D2F8A0000000141 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E8A1B4072D2F8A0000000407 /* NSPasteboard+Helpers.swift */,
+				E8A1B4092D2F8A0000000409 /* Data+Image.swift */,
+				E8A1B40B2D2F8A000000040B /* String+Search.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E8A1B2502D2F8A0000000150 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E8A1B1032D2F8A0000000002 /* Assets.xcassets */,
+				E8A1B1052D2F8A0000000003 /* ClipVault.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E8A1B3002D2F8A0000000200 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E8A1B3102D2F8A0000000210 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E8A1B3202D2F8A0000000220 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8A1B0F72D2F8A0000000001 /* ClipVault */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8A1B1082D2F8A0000000006 /* Build configuration list for PBXNativeTarget "ClipVault" */;
+			buildPhases = (
+				E8A1B0F42D2F8A0000000001 /* Sources */,
+				E8A1B0F52D2F8A0000000001 /* Frameworks */,
+				E8A1B0F62D2F8A0000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClipVault;
+			packageProductDependencies = (
+			);
+			productName = ClipVault;
+			productReference = E8A1B0F82D2F8A0000000001 /* ClipVault.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8A1B10D2D2F8A0000000010 /* ClipVaultTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8A1B1142D2F8A0000000011 /* Build configuration list for PBXNativeTarget "ClipVaultTests" */;
+			buildPhases = (
+				E8A1B10A2D2F8A0000000010 /* Sources */,
+				E8A1B10B2D2F8A0000000010 /* Frameworks */,
+				E8A1B10C2D2F8A0000000010 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8A1B1122D2F8A0000000011 /* PBXTargetDependency */,
+			);
+			name = ClipVaultTests;
+			packageProductDependencies = (
+			);
+			productName = ClipVaultTests;
+			productReference = E8A1B10E2D2F8A0000000010 /* ClipVaultTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E8A1B11D2D2F8A0000000020 /* ClipVaultUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8A1B1242D2F8A0000000021 /* Build configuration list for PBXNativeTarget "ClipVaultUITests" */;
+			buildPhases = (
+				E8A1B11A2D2F8A0000000020 /* Sources */,
+				E8A1B11B2D2F8A0000000020 /* Frameworks */,
+				E8A1B11C2D2F8A0000000020 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8A1B1222D2F8A0000000021 /* PBXTargetDependency */,
+			);
+			name = ClipVaultUITests;
+			packageProductDependencies = (
+			);
+			productName = ClipVaultUITests;
+			productReference = E8A1B11E2D2F8A0000000020 /* ClipVaultUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8A1B0F02D2F8A0000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					E8A1B0F72D2F8A0000000001 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					E8A1B10D2D2F8A0000000010 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = E8A1B0F72D2F8A0000000001;
+					};
+					E8A1B11D2D2F8A0000000020 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = E8A1B0F72D2F8A0000000001;
+					};
+				};
+			};
+			buildConfigurationList = E8A1B0F32D2F8A0000000000 /* Build configuration list for PBXProject "ClipVault" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8A1B0EF2D2F8A0000000000;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E8A1B0F92D2F8A0000000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8A1B0F72D2F8A0000000001 /* ClipVault */,
+				E8A1B10D2D2F8A0000000010 /* ClipVaultTests */,
+				E8A1B11D2D2F8A0000000020 /* ClipVaultUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8A1B0F62D2F8A0000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A1B1022D2F8A0000000002 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A1B10C2D2F8A0000000010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A1B11C2D2F8A0000000020 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8A1B0F42D2F8A0000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A1B1002D2F8A0000000001 /* ClipVaultApp.swift in Sources */,
+				E8A1B1042D2F8A0000000003 /* ClipVault.xcdatamodeld in Sources */,
+				E8A1B4002D2F8A0000000400 /* ContentType.swift in Sources */,
+				E8A1B4022D2F8A0000000402 /* ClipboardItem.swift in Sources */,
+				E8A1B4042D2F8A0000000404 /* Constants.swift in Sources */,
+				E8A1B4062D2F8A0000000406 /* NSPasteboard+Helpers.swift in Sources */,
+				E8A1B4082D2F8A0000000408 /* Data+Image.swift in Sources */,
+				E8A1B40A2D2F8A000000040A /* String+Search.swift in Sources */,
+				E8A1B40C2D2F8A000000040C /* SettingsManager.swift in Sources */,
+				E8A1B40E2D2F8A000000040E /* PermissionManager.swift in Sources */,
+				E8A1B4102D2F8A0000000410 /* ImageProcessor.swift in Sources */,
+				E8A1B4122D2F8A0000000412 /* HistoryStore.swift in Sources */,
+				E8A1B4142D2F8A0000000414 /* ClipboardMonitor.swift in Sources */,
+				E8A1B5002D2F8A0000000500 /* ClipboardViewModel.swift in Sources */,
+				E8A1B5022D2F8A0000000502 /* HotkeyManager.swift in Sources */,
+				E8A1B5042D2F8A0000000504 /* PasteService.swift in Sources */,
+				E8A1B5062D2F8A0000000506 /* EmptyStateView.swift in Sources */,
+				E8A1B5082D2F8A0000000508 /* ClipboardItemRow.swift in Sources */,
+				E8A1B50A2D2F8A000000050A /* ClipboardListView.swift in Sources */,
+				E8A1B50C2D2F8A000000050C /* SearchBar.swift in Sources */,
+				E8A1B50E2D2F8A000000050E /* MenuBarView.swift in Sources */,
+				E8A1B5102D2F8A0000000510 /* ImagePreviewView.swift in Sources */,
+				E8A1B5122D2F8A0000000512 /* PinnedSectionView.swift in Sources */,
+				E8A1B5142D2F8A0000000514 /* OnboardingView.swift in Sources */,
+				E8A1B5162D2F8A0000000516 /* SettingsView.swift in Sources */,
+				E8A1B5182D2F8A0000000518 /* SettingsViewModel.swift in Sources */,
+				E8A1B60B2D2F8A0000000602 /* SoundService.swift in Sources */,
+				E8A1B60D2D2F8A0000000604 /* FaviconView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A1B10A2D2F8A0000000010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A1B11A2D2F8A0000000020 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8A1B1122D2F8A0000000011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8A1B0F72D2F8A0000000001 /* ClipVault */;
+			targetProxy = E8A1B1102D2F8A0000000010 /* PBXContainerItemProxy */;
+		};
+		E8A1B1222D2F8A0000000021 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8A1B0F72D2F8A0000000001 /* ClipVault */;
+			targetProxy = E8A1B1202D2F8A0000000020 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E8A1B1092D2F8A0000000007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = ClipVault/ClipVault.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ClipVault/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EdaBoard;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.edaboard.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		E8A1B10A2D2F8A0000000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = ClipVault/ClipVault.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ClipVault/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EdaBoard;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.edaboard.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		E8A1B1152D2F8A0000000012 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipvault.ClipVaultTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipVault.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClipVault";
+			};
+			name = Debug;
+		};
+		E8A1B1162D2F8A0000000013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipvault.ClipVaultTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipVault.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClipVault";
+			};
+			name = Release;
+		};
+		E8A1B1252D2F8A0000000022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipvault.ClipVaultUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TEST_TARGET_NAME = ClipVault;
+			};
+			name = Debug;
+		};
+		E8A1B1262D2F8A0000000023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipvault.ClipVaultUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TEST_TARGET_NAME = ClipVault;
+			};
+			name = Release;
+		};
+		E8A1B1272D2F8A0000000024 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		E8A1B1282D2F8A0000000025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8A1B0F32D2F8A0000000000 /* Build configuration list for PBXProject "ClipVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8A1B1272D2F8A0000000024 /* Debug */,
+				E8A1B1282D2F8A0000000025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8A1B1082D2F8A0000000006 /* Build configuration list for PBXNativeTarget "ClipVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8A1B1092D2F8A0000000007 /* Debug */,
+				E8A1B10A2D2F8A0000000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8A1B1142D2F8A0000000011 /* Build configuration list for PBXNativeTarget "ClipVaultTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8A1B1152D2F8A0000000012 /* Debug */,
+				E8A1B1162D2F8A0000000013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8A1B1242D2F8A0000000021 /* Build configuration list for PBXNativeTarget "ClipVaultUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8A1B1252D2F8A0000000022 /* Debug */,
+				E8A1B1262D2F8A0000000023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E8A1B1052D2F8A0000000003 /* ClipVault.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E8A1B1052D2F8A0000000004 /* ClipVault.xcdatamodel */,
+			);
+			currentVersion = E8A1B1052D2F8A0000000004 /* ClipVault.xcdatamodel */;
+			path = ClipVault.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E8A1B0F02D2F8A0000000000 /* Project object */;
+}

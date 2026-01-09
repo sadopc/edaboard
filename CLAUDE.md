@@ -1,0 +1,164 @@
+# EdaBoard Development Guide
+
+**Project**: EdaBoard - Native macOS Menubar Clipboard Manager
+
+## Overview
+
+EdaBoard is a native macOS menubar clipboard manager that automatically captures clipboard content (text, images, files, rich text), stores configurable history (up to 1000 items), provides instant search, and enables quick paste via global hotkey.
+
+## Tech Stack
+
+- **Language**: Swift 6.0 with strict concurrency (`SWIFT_STRICT_CONCURRENCY = complete`)
+- **UI**: SwiftUI with MenuBarExtra (`.menuBarExtraStyle(.window)`)
+- **Storage**: Core Data (SQLite) for metadata + File system for images
+- **Platform**: macOS 26.0+ (Tahoe), Apple Silicon (arm64) only
+- **Architecture**: MVVM with actor-isolated services
+- **Distribution**: Direct (non-App Store) for full global hotkey support
+
+## Project Structure
+
+```
+ClipVault/
+├── ClipVaultApp.swift              # App entry point with MenuBarExtra
+├── Info.plist                      # LSUIElement=true (agent app)
+│
+├── Views/
+│   ├── MenuBarView.swift           # Main popover content
+│   ├── ClipboardItemRow.swift      # Individual item display
+│   ├── ClipboardListView.swift     # Scrollable history list
+│   ├── ImagePreviewView.swift      # Full-size image viewer
+│   ├── SearchBar.swift             # Instant search component
+│   ├── PinnedSectionView.swift     # Pinned items section
+│   ├── SettingsView.swift          # Preferences window
+│   ├── OnboardingView.swift        # First launch wizard
+│   └── EmptyStateView.swift        # No history placeholder
+│
+├── ViewModels/
+│   ├── ClipboardViewModel.swift    # Main data binding (@MainActor)
+│   └── SettingsViewModel.swift     # Settings state management
+│
+├── Services/
+│   ├── ClipboardMonitor.swift      # NSPasteboard polling (actor)
+│   ├── HistoryStore.swift          # Core Data operations (actor)
+│   ├── PermissionManager.swift     # Accessibility/TCC handling
+│   ├── HotkeyManager.swift         # Global keyboard shortcuts
+│   ├── ImageProcessor.swift        # Thumbnail generation (actor)
+│   ├── PasteService.swift          # Paste simulation
+│   ├── SoundService.swift          # Sound effects
+│   └── SettingsManager.swift       # UserDefaults wrapper
+│
+├── Models/
+│   ├── ClipboardItem.swift         # Core Data entity extension
+│   └── ContentType.swift           # Enum for pasteboard types
+│
+├── Utilities/
+│   ├── Constants.swift             # App-wide constants
+│   └── Extensions/
+│       ├── NSPasteboard+Helpers.swift
+│       ├── Data+Image.swift
+│       └── String+Search.swift
+│
+└── Resources/
+    ├── ClipVault.xcdatamodeld      # Core Data model
+    └── Assets.xcassets             # Icons and images
+```
+
+## Build Commands
+
+```bash
+# Build (Debug)
+xcodebuild -scheme ClipVault -configuration Debug build
+
+# Build (Release)
+xcodebuild -scheme ClipVault -configuration Release build
+
+# Test
+xcodebuild -scheme ClipVault -configuration Debug test
+
+# Archive for distribution
+xcodebuild -scheme ClipVault -configuration Release archive
+```
+
+## Key Architectural Decisions
+
+### Clipboard Monitoring
+- **Approach**: Timer-based polling with `NSPasteboard.changeCount` comparison
+- **Reason**: macOS provides NO native clipboard change notifications
+- **Interval**: 500ms default with timer tolerance for power efficiency
+
+### Global Hotkey
+- **Approach**: Carbon API (RegisterEventHotKey) via Swift wrapper
+- **Default**: Cmd+Shift+V
+- **Requires**: Accessibility permission
+
+### Image Storage
+- **Thumbnails**: Generated via CGImageSource (faster than NSImage), stored as files
+- **Full images**: Stored in `~/Library/Application Support/EdaBoard/images/`
+- **Core Data**: Stores paths only, not binary data
+
+### Concurrency
+- All services are `actor`-isolated for thread safety
+- ViewModels use `@MainActor`
+- Use `AsyncStream` for clipboard content events
+
+## Code Style
+
+### Swift 6 Patterns
+
+```swift
+// Actor for shared state
+actor ClipboardMonitor {
+    private var lastChangeCount = 0
+
+    func checkForChanges() async -> ClipboardContent? {
+        let current = NSPasteboard.general.changeCount
+        guard current != lastChangeCount else { return nil }
+        lastChangeCount = current
+        return await processContent()
+    }
+}
+
+// @MainActor for UI state
+@MainActor
+class ClipboardViewModel: ObservableObject {
+    @Published var items: [ClipboardItem] = []
+}
+
+// Explicit error handling
+do {
+    let items = try await store.fetchRecent(limit: 100)
+} catch {
+    logger.error("Fetch failed: \(error)")
+}
+```
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| Cmd+Shift+V | Show/hide EdaBoard |
+| Cmd+1-9 | Quick paste items 1-9 |
+| Arrow keys | Navigate history |
+| Enter | Paste selected item |
+| Option+Enter | Paste as plain text |
+| Cmd+P | Pin/unpin item |
+| Escape | Dismiss popover |
+
+## Sensitive Content Filtering
+
+Automatically excluded pasteboard types:
+- `org.nspasteboard.ConcealedType` (password managers)
+- `org.nspasteboard.AutoGeneratedType` (system-generated)
+- `org.nspasteboard.TransientType` (temporary content)
+
+## Core Data Entity: ClipboardItem
+
+17 attributes:
+- `id` (UUID), `timestamp` (Date), `contentType` (String)
+- `textContent`, `plainTextContent`, `htmlContent` (String?)
+- `rtfData` (Binary), `thumbnailPath`, `fullImagePath` (String?)
+- `fileURLString`, `fileName`, `urlString` (String?)
+- `sourceAppBundleId`, `sourceAppName` (String?)
+- `isPinned` (Bool), `dataSize` (Int64), `contentHash` (String)
+
+Indexes: timestamp (desc), isPinned, contentHash, contentType
